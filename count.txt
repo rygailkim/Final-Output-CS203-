@@ -1,0 +1,137 @@
+
+Mariselle Jelina Berones uploaded an item
+Text
+FO.txt
+/*
+FO Berones
+Pseudocode
+ 1. asks user to choose between programs
+ 
+ 1. Asks user to input a string value up to 100.
+ 2. Program Accepts value abd determines repeating characters.
+ 3. Program counts the characters.
+ 4. program displays each chcracter and shows how many times they showed up.
+
+ RYANNE I THINK MAY PROBLEM SIYA. ;-; WHEN IM CALLING THE CASE3 METHOD INSIDE THE CASE, NAGEEND SIYA AFTER NG FIRST COUT. i tried doing the if else din pero ganun din siya aaaaa nahihiya na ako sa GC ;w;
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <string.h>
+#include <cstring>
+
+using namespace std;
+void Case3();
+void userInput();
+
+int main(){
+    userInput();
+    //Case3();
+    }
+
+void Case3(){
+    string om;
+    char input[101];
+    char check[sizeof(input)];
+    int count[101];
+    int i, j;
+    string rar;
+
+    
+    cout<<"Enter String Value: ";
+    getline(cin,om);
+    strcpy(input, om.c_str());
+    strcpy(check, input);
+        
+    for ( i = 0; i < strlen(input); i++){
+        count[i] = 0;
+        for (j = 0; j< strlen(input); j++){
+                    if (input[i] == input[j])
+                    {
+                        count[i] +=1;
+                    }
+            }
+        }
+
+        
+        for( i = 0; i<strlen(check); i++)
+        {
+            char c = check[i];
+            for(int j=i+1; j<strlen(check);j++)
+                {
+                    if(c==check[j])
+                    {
+                    check [j]= ' ';
+                    }
+                }
+        }
+    
+        for (int i = 0; i < strlen(check); i++){
+            if(check[i] != ' '){
+                cout << "Number of "<<check[i]<<" = " << count[i] <<endl;
+            }
+            else{}
+        }
+}
+
+void userInput(){
+    char choice;
+      cout<<"Please choose '1', '2', or '3': ";
+   t: cin>>choice;
+      while (cin.fail())
+                  {
+                      cin.clear();
+                      cin.ignore();
+                      cout<< "\nPlease choose '1', '2', or '3' only.";
+                      goto t;
+                  }
+      
+      switch (choice){
+          case '1':
+              //choice 1 here.
+              cout<<"You have chosen 1.";
+              break;
+          case '2':
+              //choice 2 here.
+              cout<<"You have chosen 2.";
+              break;
+          case '3':
+              //choice 3 here.
+              cout<<"You have chosen 3.";
+              break;
+              
+          default:
+              cout<<"Please choose '1', '2', or '3' only.";
+              goto t;
+      }
+}
+
+//if else variation!
+void userInput1(){
+    char choice;
+    cout<<"Please choose '1', '2', or '3': ";
+       t: cin>>choice;
+          while (cin.fail())
+                      {
+                          cin.clear();
+                          cin.ignore();
+                          cout<< "\nPlease choose '1', '2', or '3' only.";
+                          goto t;
+                      }
+    if (choice == '1'){
+        cout<<"You have chosen 1";
+    }
+    else if ( choice == '2'){
+        cout<<"You have chosen 1";
+    }
+    else if (choice == '3'){
+        cout<<"You have chosen 3"<<endl;
+    }
+    else{
+        cout<<"Please choose '1', '2', or '3' only.";
+                      goto t;
+    }
+}
+
+
+

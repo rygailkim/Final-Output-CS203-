@@ -1,0 +1,85 @@
+Cunanan_Finals_SourceCode.txt
+Yesterday
+Sun 2:18 PM
+
+Jaime Lorenzo Cunanan uploaded an item
+Text
+Cunanan_Finals_SourceCode.txt
+//Cunanan
+//FO
+
+/*PSEUDOCODE
+1. Ask user to input 10 integers.
+2. Ask user what number he wants to search for in array.
+3. Program searches for number if existing or not.
+
+//
+
+
+#include<iostream>
+using namespace std;
+
+int linearSearch(int arr[], int numberToSearch)
+{
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (arr[i] == numberToSearch)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+int input()
+{
+	int arr[10], i, numberToSearch, result;
+
+	cout << "Enter 10 integers" << endl;
+	for (i = 0; i < 10; i++)
+	{
+		cout << "Element[" << i << "]: ";
+		
+		while (true)
+		{
+			cin >> arr[i];
+			if (!cin)
+			{
+				cout << "Error, enter an integer for Element[" << i << "]: ";
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				continue;
+			}
+
+			break;
+		}
+	}
+
+	cout << "\n";
+
+	for (i = 0; i < 10; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+
+	cout << "\n\nWhat number would you like to search for: ";
+	cin >> numberToSearch;
+
+	result = linearSearch(arr, numberToSearch);
+	if (result == -1)
+	{
+		cout << "Element is not present in array" << endl;		
+	}
+	else
+	{
+		cout << "Element is present at index[" << result << "]" << endl;
+	}
+
+	return 0;
+}
+
+int main()
+{
+	input();
+}
